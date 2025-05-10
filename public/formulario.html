@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="icon" href="/public/img/Log.png">
+    <!-- Agregar FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inicio de Sesión</h1>
+        <form id="miFormulario">
+            <!-- Campo: Correo Electrónico -->
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required />
+                <span id="correo-error" class="error-message"></span>
+            </div>
+
+            <!-- Campo: Contraseña -->
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required />
+                <span id="contrasena-error" class="error-message"></span>
+            </div>
+
+            <!-- Botón de Inicio de Sesión -->
+            <button type="submit">
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+            </button>
+            <!-- Botón de Regresar -->
+<button class="btn-regresar" onclick="window.location.href='Home.html'">
+    <i class="fas fa-arrow-left"></i> Regresar
+</button>
+
+            <!-- Enlace para Registrarse -->
+            <p class="registro">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </form>
+    </div>
+
+    <script src="validaciones.js"></script>
+</body>
+</html>

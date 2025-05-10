@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima y Ubicación - Papelería Interneto</title>
+    <link rel="icon" href="/public/img/Ubi.png">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA76XeND5JvWWKeVpZYIrJntUkvTtTXra8&callback=inicializarMapa" async defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            color: #333;
+            padding: 20px;
+        }
+
+        #reloj-container {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+            z-index: 1000;
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        #reloj-container p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 60px auto 20px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h2 {
+            color: #d97706;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            animation: slideIn 0.5s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 1rem;
+            animation: slideIn 0.5s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        strong {
+            color: #b85600;
+        }
+
+        #mapa {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out 0.4s forwards;
+            opacity: 0;
+        }
+
+        .footer {
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #d97706;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #b85600;
+            text-decoration: underline;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 80px 15px 15px;
+                padding: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            #reloj-container {
+                top: 10px;
+                left: 10px;
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+
+            #mapa {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="reloj-container">
+        <p id="ubicacion">📍 Santa Catarina, Nuevo León</p>
+        <p id="hora">⏰ Cargando...</p>
+        <p id="fecha">📅 Cargando...</p>
+    </div>
+
+    <div class="container">
+        <h2>Sobre Nosotros</h2>
+        <p><strong>Papelería Interneto</strong> nos dedicamos a ofrecer los mejores productos de papelería para satisfacer las necesidades de nuestros clientes. Desde lápices y cuadernos hasta impresiones de alta calidad, estamos comprometidos con la excelencia y el servicio al cliente. Nuestra misión es proporcionar productos de calidad a precios accesibles, ayudando a nuestros clientes a alcanzar sus objetivos académicos, profesionales y personales.</p>
+        <p>¡Gracias por elegirnos! Estamos aquí para servirte.</p>
+
+        <h2>Nos ubicamos Aquí!</h2>
+        <div id="mapa"></div>
+        <div class="footer">
+            <p>Volver a <a href="Home.html">Papelería Interneto</a></p>
+        </div>
+    </div>
+
+    <script>
+        function obtenerFecha() {
+            const ahora = new Date();
+            document.getElementById("fecha").innerText = "📅 " + ahora.toLocaleDateString('es-MX', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        function obtenerHora() {
+            const ahora = new Date();
+            document.getElementById("hora").innerText = "⏰ " + ahora.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true });
+        }
+        function inicializarMapa() {
+            var ubicacion = { lat: 25.692332, lng: -100.5144315 };
+            var mapa = new google.maps.Map(document.getElementById("mapa"), {
+                zoom: 12,
+                center: ubicacion
+            });
+            new google.maps.Marker({
+                position: ubicacion,
+                map: mapa,
+                title: "Aquí estamos"
+            });
+        }
+        obtenerFecha();
+        obtenerHora();
+        setInterval(obtenerHora, 60000);
+    </script>
+</body>
+</html>

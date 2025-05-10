@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Libretas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/public/img/Pencil.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">    
+        <h1>Formulario para Guardar Libreta</h1>
+        <section>
+            <form id="libreta-form">
+                <!-- Campo: Nombre del producto -->
+                <div class="form-group">
+                    <label for="libreta-name">Nombre del producto:</label>
+                    <input type="text" id="libreta-name" name="libreta-name" placeholder="Inserte el nombre del producto" required />
+                    <span id="libreta-name-error" class="error-message"></span>
+                </div>
+
+                <!-- Campo: Tamaño/Tipo -->
+                <div class="form-group">
+                    <label for="libreta-type">Tamaño/Tipo (Inserte depende a la necesidad):</label>
+                    <input type="text" id="libreta-type" name="libreta-type" placeholder="Ej: Italiana, Cuadricula, C. Chico." required />
+                    <span id="libreta-type-error" class="error-message"></span>
+                </div>
+
+                <!-- Campo: Precio -->
+                <div class="form-group">
+                    <label for="libreta-price">Precio:</label>
+                    <input type="text" id="libreta-price" name="libreta-price" placeholder="Ej: 25.99" required />
+                    <span id="libreta-price-error" class="error-message"></span>
+                </div>
+
+                <!-- Campo: Cantidad -->
+                <div class="form-group">
+                    <label for="libreta-quantity">Cantidad:</label>
+                    <input type="text" id="libreta-quantity" name="libreta-quantity" placeholder="Ej: 1-250" required />
+                    <span id="libreta-quantity-error" class="error-message"></span>
+                </div>
+
+                <!-- Botón de Guardar -->
+                <button type="submit">
+                    <i class="fas fa-save"></i> Guardar Libreta
+                </button>
+            </form>
+
+            <!-- Botón de Regresar -->
+            <button class="btn-regresar">
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Regresar al Menú Principal</a>
+            </button>
+        </section>
+    </div>
+    </script> <script src="libretas.js"></script>
+</body>
+</html>

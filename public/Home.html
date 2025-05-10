@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="icon" href="/public/img/Pencil.png">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleHome.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <h1>Papeleria Interneto</h1>
+        </a>
+        <div class="carrito" id="carrito">
+            <p>Carrito: <span id="total">$0</span></p>
+            <button id="toggle-carrito">Ver Carrito</button>
+            <div class="carrito-lista" id="carrito-lista">
+                <!-- Aquí se mostrarán los productos añadidos -->
+            </div>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="formulario.html">Elegir Servicio</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>¡Conoce nuestros productos!</h1>
+        <div class="grid">
+            <!-- Productos originales -->
+            <div class="producto">
+                <img class="producto__imagen" src="img/LibFran.png" alt="Libreta Francesa">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Libreta Francesa</p>
+                    <p class="producto__precio">$80</p>
+                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Francesa">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/LibCel.png" alt="Libreta doble raya">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Libreta doble raya</p>
+                    <p class="producto__precio">$80</p>
+                    <button class="producto__boton" data-precio="80" data-nombre="Libreta doble raya">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/LibAma.png" alt="Libreta Cuadro Chico">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Libreta Cuadro Chico</p>
+                    <p class="producto__precio">$80</p>
+                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Chico">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/LibAzul.png" alt="Libreta Cuadro Grande">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Libreta Cuadro Grande</p>
+                    <p class="producto__precio">$80</p>
+                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Grande">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <!-- Productos nuevos -->
+            <div class="producto">
+                <img class="producto__imagen" src="img/Sacapuntas.jpeg" alt="Sacapuntas">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Sacapuntas</p>
+                    <p class="producto__precio">$10</p>
+                    <button class="producto__boton" data-precio="10" data-nombre="Sacapuntas">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Borrador.jpg" alt="Borrador">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Borrador</p>
+                    <p class="producto__precio">$5</p>
+                    <button class="producto__boton" data-precio="5" data-nombre="Borrador">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Lapiz.jpg" alt="Lapiz">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Lapiz</p>
+                    <p class="producto__precio">$8</p>
+                    <button class="producto__boton" data-precio="8" data-nombre="Lapiz">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/LColores.jpg" alt="Color">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Color</p>
+                    <p class="producto__precio">$15</p>
+                    <button class="producto__boton" data-precio="15" data-nombre="Color">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Copias.jpg" alt="Copias">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Copias</p>
+                    <p class="producto__precio">Varia El precio de impresion 5$-25$</p>
+                    <button class="producto__boton" data-precio="5" data-nombre="Copias">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Usb.jpeg" alt="Memoria USB">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Memoria USB</p>
+                    <p class="producto__precio">$50</p>
+                    <button class="producto__boton" data-precio="50" data-nombre="Memoria USB">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Plastilina.jpeg" alt="Plastilina">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Plastilina</p>
+                    <p class="producto__precio">$25</p>
+                    <button class="producto__boton" data-precio="25" data-nombre="Plastilina">Añadir al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img class="producto__imagen" src="img/Plumas.jpg" alt="Boligrafo">
+                <div class="producto__informacion">
+                    <p class="producto__nombre">Boligrafo</p>
+                    <p class="producto__precio">$17</p>
+                    <button class="producto__boton" data-precio="17" data-nombre="Boligrafo">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos los derechos Reservados 2022.</p>
+    </footer>
+
+    <script src="Home.js"></script>
+</body>
+</html>
