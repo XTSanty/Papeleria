@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FrontEnd Store</title>
+    <meta name="description" content="Papelería Interneto - Todos los productos escolares y de oficina">
+    <title>Papelería Interneto - Productos</title>
+    <link rel="preload" href="css/normalize.css" as="style">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="icon" href="/public/img/Pencil.png">
+    <link rel="icon" href="/public/img/Pencil.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styleHome.css">
 </head>
@@ -15,11 +19,15 @@
             <h1>Papeleria Interneto</h1>
         </a>
         <div class="carrito" id="carrito">
-            <p>Carrito: <span id="total">$0</span></p>
-            <button id="toggle-carrito">Ver Carrito</button>
-            <div class="carrito-lista" id="carrito-lista">
-                <!-- Aquí se mostrarán los productos añadidos -->
+            <div class="carrito-icono">
+                <span id="contador-productos">0</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
             </div>
+            <span id="total">$0.00</span>
         </div>
     </header>
 
@@ -33,7 +41,7 @@
         <div class="grid">
             <!-- Productos originales -->
             <div class="producto">
-                <img class="producto__imagen" src="img/LibFran.png" alt="Libreta Francesa">
+                <img class="producto__imagen" src="img/LibFran.png" alt="Libreta Francesa" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta Francesa</p>
                     <p class="producto__precio">$80</p>
@@ -41,7 +49,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/LibCel.png" alt="Libreta doble raya">
+                <img class="producto__imagen" src="img/LibCel.png" alt="Libreta doble raya" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta doble raya</p>
                     <p class="producto__precio">$80</p>
@@ -49,7 +57,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/LibAma.png" alt="Libreta Cuadro Chico">
+                <img class="producto__imagen" src="img/LibAma.png" alt="Libreta Cuadro Chico" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta Cuadro Chico</p>
                     <p class="producto__precio">$80</p>
@@ -57,7 +65,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/LibAzul.png" alt="Libreta Cuadro Grande">
+                <img class="producto__imagen" src="img/LibAzul.png" alt="Libreta Cuadro Grande" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta Cuadro Grande</p>
                     <p class="producto__precio">$80</p>
@@ -67,7 +75,7 @@
 
             <!-- Productos nuevos -->
             <div class="producto">
-                <img class="producto__imagen" src="img/Sacapuntas.jpeg" alt="Sacapuntas">
+                <img class="producto__imagen" src="img/Sacapuntas.jpeg" alt="Sacapuntas" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Sacapuntas</p>
                     <p class="producto__precio">$10</p>
@@ -75,7 +83,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Borrador.jpg" alt="Borrador">
+                <img class="producto__imagen" src="img/Borrador.jpg" alt="Borrador" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Borrador</p>
                     <p class="producto__precio">$5</p>
@@ -83,7 +91,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Lapiz.jpg" alt="Lapiz">
+                <img class="producto__imagen" src="img/Lapiz.jpg" alt="Lapiz" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Lapiz</p>
                     <p class="producto__precio">$8</p>
@@ -91,7 +99,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/LColores.jpg" alt="Color">
+                <img class="producto__imagen" src="img/LColores.jpg" alt="Color" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Color</p>
                     <p class="producto__precio">$15</p>
@@ -99,7 +107,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Copias.jpg" alt="Copias">
+                <img class="producto__imagen" src="img/Copias.jpg" alt="Copias" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Copias</p>
                     <p class="producto__precio">Varia El precio de impresion 5$-25$</p>
@@ -107,7 +115,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Usb.jpeg" alt="Memoria USB">
+                <img class="producto__imagen" src="img/Usb.jpeg" alt="Memoria USB" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Memoria USB</p>
                     <p class="producto__precio">$50</p>
@@ -115,7 +123,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Plastilina.jpeg" alt="Plastilina">
+                <img class="producto__imagen" src="img/Plastilina.jpeg" alt="Plastilina" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Plastilina</p>
                     <p class="producto__precio">$25</p>
@@ -123,7 +131,7 @@
                 </div>
             </div>
             <div class="producto">
-                <img class="producto__imagen" src="img/Plumas.jpg" alt="Boligrafo">
+                <img class="producto__imagen" src="img/Plumas.jpg" alt="Boligrafo" width="200" height="150" loading="lazy">
                 <div class="producto__informacion">
                     <p class="producto__nombre">Boligrafo</p>
                     <p class="producto__precio">$17</p>
@@ -133,8 +141,59 @@
         </div>
     </main>
 
+    <!-- Overlay del carrito -->
+    <div class="carrito-overlay" id="carrito-overlay"></div>
+
+    <!-- Panel del carrito -->
+    <div class="carrito-panel" id="carrito-panel">
+        <div class="carrito-header">
+            <h2>Tu Carrito</h2>
+            <button class="cerrar-carrito" id="cerrar-carrito">&times;</button>
+        </div>
+        
+        <div class="carrito-items" id="carrito-items">
+            <!-- Los productos del carrito aparecerán aquí -->
+            <div class="carrito-vacio">Tu carrito está vacío</div>
+        </div>
+        
+        <div class="carrito-total">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="carrito-subtotal">$0.00</span>
+            </div>
+            
+            <div class="descuento-container">
+                <input type="text" id="cupon-input" placeholder="Código de descuento (10 caracteres)" maxlength="10">
+                <button id="aplicar-cupon">Aplicar</button>
+            </div>
+            
+            <div class="descuento-aplicado" id="descuento-aplicado" style="display: none;">
+                <span>Descuento:</span>
+                <span id="descuento-monto">-$0.00</span>
+            </div>
+            
+            <div class="total">
+                <span>Total:</span>
+                <span id="carrito-total">$0.00</span>
+            </div>
+            
+            <div class="pago-container">
+                <input type="number" id="monto-pagado" placeholder="Monto recibido">
+                <button id="calcular-cambio">Calcular</button>
+            </div>
+            
+            <div class="cambio-info" id="cambio-info" style="display: none;">
+                <span>Cambio:</span>
+                <span id="monto-cambio">$0.00</span>
+            </div>
+            
+            <button class="vaciar-carrito" id="vaciar-carrito">Vaciar Carrito</button>
+            <button class="pagar-carrito" id="pagar-carrito">Procesar Pago</button>
+        </div>
+    </div>
+
     <footer class="footer">
-        <p class="footer__texto">Front End Store - Todos los derechos Reservados 2022.</p>
+        <p class="footer__texto">Front End Store - Todos los derechos Reservados <span id="current-year"></span>.</p>
     </footer>
 
     <script src="Home.js"></script>
