@@ -57,7 +57,52 @@ body {
 }
 
 /* Carrito en el header */
-.carrito {
+  .carrito {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: white;
+      padding: 10px 15px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--sombra);
+      cursor: pointer;
+      transition: var(--transicion);
+  }
+
+  .carrito:hover {
+      transform: translateY(-2px);
+  }
+
+  .carrito-icono {
+      position: relative;
+  }
+
+  .carrito-icono svg {
+      width: 24px;
+      height: 24px;
+  }
+
+  #contador-productos {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #e74c3c;
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+  }
+
+  #total {
+      font-weight: bold;
+      color: var(--color-primario);
+  }
+/*lista de deseos del header*/
+.deseos {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -67,22 +112,23 @@ body {
     box-shadow: var(--sombra);
     cursor: pointer;
     transition: var(--transicion);
+    margin-left: auto;
 }
 
-.carrito:hover {
+.deseos:hover {
     transform: translateY(-2px);
 }
 
-.carrito-icono {
+.deseos-icono {
     position: relative;
 }
 
-.carrito-icono svg {
+.deseos-icono img {
     width: 24px;
     height: 24px;
 }
 
-#contador-productos {
+#contador-deseos {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -96,12 +142,6 @@ body {
     align-items: center;
     font-size: 12px;
 }
-
-#total {
-    font-weight: bold;
-    color: var(--color-primario);
-}
-
 /* Overlay del carrito */
 .carrito-overlay {
     position: fixed;
@@ -642,6 +682,37 @@ body {
   font-size: 1.2rem;
 }
 
+.producto__boton--deseos {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transicion);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    width: auto;        /* Ajuste automático al contenido */
+    height: auto;       /* Igual */
+}
+
+.producto__boton--deseos:hover {
+    background-color: var(--color-primario);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Imagen del corazón adaptada al botón */
+.icono-deseo {
+    width: 20px;
+    height: 20px;
+}
+
 .producto__boton {
   background-color: var(--color-secundario);
   color: white;
@@ -834,3 +905,4 @@ body {
 
 /* Estilos para el carrito (se mantienen igual que en el código anterior) */
 /* ... */
+
