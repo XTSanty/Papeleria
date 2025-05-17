@@ -19,6 +19,11 @@
             <h1>Papeleria Interneto</h1>
         </a>
         <div class="deseos" id="btn-deseos">
+            <div class="lista-deseos" id="lista-deseos">
+                <ul id="deseos-items" class="lista-deseos__items"></ul>
+                <button id="vaciar-deseos" class="producto__boton--deseos btn-vaciar">Vaciar lista</button>
+            </div>
+
             <div class="deseos-icono">
             <img src="img/add_to_wishlist.png" alt="Lista de deseos">
             Lista de deseos
@@ -64,7 +69,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta doble raya</p>
                     <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta doble raya">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -76,7 +81,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta Cuadro Chico</p>
                     <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Chico">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -88,7 +93,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Libreta Cuadro Grande</p>
                     <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Grande">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -102,7 +107,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Sacapuntas</p>
                     <p class="producto__precio">$10</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="10" data-nombre="Sacapuntas">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -114,7 +119,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Borrador</p>
                     <p class="producto__precio">$5</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="5" data-nombre="Borrador">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -126,7 +131,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Lapiz</p>
                     <p class="producto__precio">$8</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="8" data-nombre="Lapiz">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -138,7 +143,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Color</p>
                     <p class="producto__precio">$15</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="15" data-nombre="Color">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -150,7 +155,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Copias</p>
                     <p class="producto__precio">Varia El precio de impresion 5$-25$</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="5" data-nombre="Copias">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -162,7 +167,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Memoria USB</p>
                     <p class="producto__precio">$50</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="50" data-nombre="Memoria USB">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -174,7 +179,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Plastilina</p>
                     <p class="producto__precio">$25</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="25" data-nombre="Plastilina">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -186,7 +191,7 @@
                 <div class="producto__informacion">
                     <p class="producto__nombre">Boligrafo</p>
                     <p class="producto__precio">$17</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                    <button class="producto__boton--deseos" data-precio="17" data-nombre="Boligrafo">
                         <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
                     </button>
                     <br>
@@ -253,4 +258,71 @@
 
     <script src="Home.js"></script>
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const botonesDeseo = document.querySelectorAll('.producto__boton--deseos');
+  const contadorDeseos = document.getElementById('contador-deseos');
+  const listaDeseos = document.getElementById('lista-deseos');
+  const deseosItems = document.getElementById('deseos-items');
+  const btnVaciar = document.getElementById('vaciar-deseos');
+  const btnToggleLista = document.getElementById('btn-deseos');
+
+  let deseos = [];
+
+  function actualizarContador() {
+    contadorDeseos.textContent = deseos.length;
+  }
+
+  function renderizarLista() {
+    deseosItems.innerHTML = '';
+    deseos.forEach((producto, index) => {
+      const li = document.createElement('li');
+      li.classList.add('lista-deseos__item');
+      li.innerHTML = `
+        <span>${producto.nombre} - $${producto.precio}</span>
+        <button class="producto__boton--deseos btn-eliminar" data-index="${index}">Eliminar</button>
+      `;
+      deseosItems.appendChild(li);
+    });
+    actualizarContador();
+  }
+
+  botonesDeseo.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+      e.preventDefault(); // previene errores si el botón está en un form
+
+      const nombre = boton.dataset.nombre;
+      const precio = boton.dataset.precio;
+
+      if (!deseos.some(p => p.nombre === nombre)) {
+        deseos.push({ nombre, precio });
+        renderizarLista();
+      } else {
+        alert('Este producto ya está en tu lista de deseos.');
+      }
+    });
+  });
+
+  btnToggleLista.addEventListener('click', () => {
+  listaDeseos.classList.toggle('activa');
+});
+
+
+  deseosItems.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-eliminar')) {
+      const index = e.target.dataset.index;
+      deseos.splice(index, 1);
+      renderizarLista();
+    }
+  });
+
+  btnVaciar.addEventListener('click', () => {
+    if (confirm('¿Seguro que quieres vaciar tu lista de deseos?')) {
+      deseos = [];
+      renderizarLista();
+    }
+  });
+});
+</script>
+
 </html>
