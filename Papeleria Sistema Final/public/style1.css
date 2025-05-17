@@ -1,0 +1,226 @@
+/* Reset de estilos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #fffde7, #e0f7fa); /* Fondo degradado suave */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada */
+}
+
+h1 {
+    color: #ff6f00; /* Naranja vibrante */
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1::before {
+    content: "✨"; /* Emoji de chispa */
+    font-size: 36px;
+    animation: bounce 2s infinite;
+}
+
+.instructions {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.option {
+    position: relative;
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.option:hover {
+    transform: scale(1.05); /* Ligera escala al pasar el cursor */
+}
+
+button {
+    background: linear-gradient(45deg, #ffca28, #ff8f00); /* Degradado naranja-amarillo */
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ffb300, #ff5722); /* Cambio de color al hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+button::after {
+    content: "🌟"; /* Emoji de estrella */
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 40px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+button:hover::after {
+    top: 10px;
+    right: 10px;
+    opacity: 0.8;
+    transform: rotate(20deg);
+}
+
+.icon {
+    font-size: 30px;
+    animation: pulse 1.5s infinite; /* Animación pulsante para emojis */
+}
+
+.description-container {
+    background: #e1f5fe; /* Azul claro suave */
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px dashed #ffca28; /* Borde punteado amarillo */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.option:hover .description-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.description::before {
+    content: "📌"; /* Emoji de chincheta */
+    font-size: 16px;
+}
+
+/* Estilo para el botón de regresar */
+button a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button a::before {
+    content: "🏠"; /* Emoji de casa */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .option {
+        max-width: 300px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .instructions {
+        font-size: 18px;
+    }
+}

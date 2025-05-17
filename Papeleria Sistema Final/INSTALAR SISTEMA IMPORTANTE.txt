@@ -1,0 +1,9 @@
+Comandos
+npm install
+npm install body-parser
+npm install express
+npm install mongoose
+npm install axios 
+npm install cors
+
+Node papeleria.js
