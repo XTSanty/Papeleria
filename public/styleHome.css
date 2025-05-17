@@ -906,3 +906,56 @@ body {
 /* Estilos para el carrito (se mantienen igual que en el código anterior) */
 /* ... */
 
+.lista-deseos {
+    background: white;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: var(--sombra);
+    border-radius: var(--border-radius);
+    max-width: 300px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.lista-deseos.activa {
+    opacity: 1;
+    height: auto;
+    pointer-events: auto;
+}
+
+
+.lista-deseos__items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.lista-deseos__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: var(--border-radius);
+}
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+}
+
+.btn-vaciar {
+    background-color: #c0392b;
+    width: 100%;
+    text-align: center;
+}
