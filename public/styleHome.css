@@ -570,34 +570,30 @@ body {
 }
 
 /* Contenedor principal */
-.contenedor {
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 3rem;
   max-width: 1400px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 0 2rem;
-  animation: fadeIn 0.8s ease-out;
-}
-
-.contenedor h1 {
-  color: var(--color-primario);
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
   position: relative;
-  padding-bottom: 1rem;
 }
-
-.contenedor h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background-color: var(--color-destacado);
-  border-radius: 2px;
+main.contenedor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-
+main.contenedor > h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+main.contenedor > .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
 /* Grid de productos */
 .grid {
   display: grid;
@@ -616,6 +612,8 @@ body {
   flex-direction: column;
   position: relative;
   animation: fadeInUp 0.6s ease-out;
+  width: 400px; /* Ancho fijo para cada producto */
+  margin: 0 auto
 }
 
 .producto:hover {
@@ -905,7 +903,6 @@ body {
 
 /* Estilos para el carrito (se mantienen igual que en el código anterior) */
 /* ... */
-
 .lista-deseos {
     background: white;
     padding: 15px;
@@ -930,7 +927,6 @@ body {
     height: auto;
     pointer-events: auto;
 }
-
 
 .lista-deseos__items {
     list-style: none;
@@ -959,3 +955,61 @@ body {
     width: 100%;
     text-align: center;
 }
+
+/*Estilo del filtro X categorias*/  
+/* Contenedor aside */
+aside.filtros-categorias {
+  width: 250px;
+  margin-left: 400px;
+  padding: 1rem;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #f9f9f9;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+  border-left: 2px solid #eee;
+  border-radius: 8px;
+
+}
+
+/* Título */
+.filtros-categorias h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+/* Labels y checkboxes */
+.filtros-categorias label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+  color: #444;
+}
+
+/* Checkbox estilo minimalista */
+.filtros-categorias input[type="checkbox"] {
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #0073e6; /* color azul ejecutivo */
+  border-radius: 3px;
+}
+
+/* Hover para mejor UX */
+.filtros-categorias label:hover {
+  color: #0073e6;
+}
+
+
+
+
+
+
+
