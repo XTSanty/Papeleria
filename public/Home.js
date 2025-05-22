@@ -258,4 +258,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Podrías implementar un sistema de notificaciones más elaborado
         alert(mensaje);
     }
+    // funcion de filtrar por categorias
+    const checkboxes = document.querySelectorAll('.checkbox-filtro');
+const productos = document.querySelectorAll('.producto');
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', () => {
+    const categoriasSeleccionadas = Array.from(checkboxes)
+      .filter(cb => cb.checked)
+      .map(cb => cb.value);
+
+    productos.forEach(producto => {
+      const categoria = producto.getAttribute('data-categoria');
+      const mostrar = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(categoria);
+      producto.style.display = mostrar ? 'block' : 'none';
+    });
+  });
+});
 });

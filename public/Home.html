@@ -1,328 +1,338 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Papelería Interneto - Todos los productos escolares y de oficina">
-    <title>Papelería Interneto - Productos</title>
-    <link rel="preload" href="css/normalize.css" as="style">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="icon" href="/public/img/Pencil.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styleHome.css">
-</head>
-<body>
-    <header class="header">
-        <a href="index.html">
-            <h1>Papeleria Interneto</h1>
-        </a>
-        <div class="deseos" id="btn-deseos">
-            <div class="lista-deseos" id="lista-deseos">
-                <ul id="deseos-items" class="lista-deseos__items"></ul>
-                <button id="vaciar-deseos" class="producto__boton--deseos btn-vaciar">Vaciar lista</button>
-            </div>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Papelería Interneto - Todos los productos escolares y de oficina">
+        <title>Papelería Interneto - Productos</title>
+        <link rel="preload" href="css/normalize.css" as="style">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="icon" href="/public/img/Pencil.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styleHome.css">
+    </head>
+    <body>
+        <header class="header">
+            <a href="index.html">
+                <h1>Papeleria Interneto</h1>
+            </a>
+            <div class="deseos" id="btn-deseos">
+                <div class="lista-deseos" id="lista-deseos">
+                    <ul id="deseos-items" class="lista-deseos__items"></ul>
+                    <button id="vaciar-deseos" class="producto__boton--deseos btn-vaciar">Vaciar lista</button>
+                </div>
 
-            <div class="deseos-icono">
-            <img src="img/add_to_wishlist.png" alt="Lista de deseos">
-            Lista de deseos
-            <span id="contador-deseos">0</span>
+                <div class="deseos-icono">
+                <img src="img/add_to_wishlist.png" alt="Lista de deseos">
+                Lista de deseos
+                <span id="contador-deseos">0</span>
+                </div>
             </div>
-        </div>
-        <div class="carrito" id="carrito">
-            <div class="carrito-icono">
-                <span id="contador-productos">0</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
+            <div class="carrito" id="carrito">
+                <div class="carrito-icono">
+                    <span id="contador-productos">0</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </div>
+                <span id="total">$0.00</span>
             </div>
-            <span id="total">$0.00</span>
-        </div>
-    </header>
+        </header>
 
-    <nav class="navegacion">
-        <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
-        <a class="navegacion__enlace" href="formulario.html">Elegir Servicio</a>
-    </nav>
+        <nav class="navegacion">
+            <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
+            <a class="navegacion__enlace" href="formulario.html">Elegir Servicio</a>
+        </nav>
 
-    <main class="contenedor">
-        <h1>¡Conoce nuestros productos!</h1>
-        <div class="grid">
-            <!-- Productos originales -->
-            <div class="producto">
-                <img class="producto__imagen" src="img/LibFran.png" alt="Libreta Francesa" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Libreta Francesa</p>
-                    <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Francesa">Añadir al carrito</button>
+        <div class="contenedor-principal">
+            <main class="contenedor">
+              <h1>¡Conoce nuestros productos!</h1>
+              <div class="grid">
+                <div class="producto libreta" data-categoria="Libreta">
+                    <img class="producto__imagen" src="img/LibFran.png" alt="Libreta Francesa" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Libreta Francesa</p>
+                        <p class="producto__precio">$80</p>
+                        <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Francesa">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="80" data-nombre="Libreta Francesa">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/LibCel.png" alt="Libreta doble raya" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Libreta doble raya</p>
-                    <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta doble raya">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="80" data-nombre="Libreta doble raya">Añadir al carrito</button>
+                <div class="producto" data-categoria="Libreta">
+                    <img class="producto__imagen" src="img/LibCel.png" alt="Libreta doble raya" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Libreta doble raya</p>
+                        <p class="producto__precio">$80</p>
+                        <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta doble raya">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="80" data-nombre="Libreta doble raya">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/LibAma.png" alt="Libreta Cuadro Chico" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Libreta Cuadro Chico</p>
-                    <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Chico">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Chico">Añadir al carrito</button>
+                <div class="producto" data-categoria="Libreta">
+                    <img class="producto__imagen" src="img/LibAma.png" alt="Libreta Cuadro Chico" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Libreta Cuadro Chico</p>
+                        <p class="producto__precio">$80</p>
+                        <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Chico">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Chico">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/LibAzul.png" alt="Libreta Cuadro Grande" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Libreta Cuadro Grande</p>
-                    <p class="producto__precio">$80</p>
-                    <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Grande">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Grande">Añadir al carrito</button>
+                <div class="producto" data-categoria="Libreta">
+                    <img class="producto__imagen" src="img/LibAzul.png" alt="Libreta Cuadro Grande" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Libreta Cuadro Grande</p>
+                        <p class="producto__precio">$80</p>
+                        <button class="producto__boton--deseos" data-precio="80" data-nombre="Libreta Cuadro Grande">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="80" data-nombre="Libreta Cuadro Grande">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Productos nuevos -->
-            <div class="producto">
-                <img class="producto__imagen" src="img/Sacapuntas.jpeg" alt="Sacapuntas" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Sacapuntas</p>
-                    <p class="producto__precio">$10</p>
-                    <button class="producto__boton--deseos" data-precio="10" data-nombre="Sacapuntas">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="10" data-nombre="Sacapuntas">Añadir al carrito</button>
+                <!-- Productos nuevos -->
+                <div class="producto" data-categoria="Escolares">
+                    <img class="producto__imagen" src="img/Sacapuntas.jpeg" alt="Sacapuntas" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Sacapuntas</p>
+                        <p class="producto__precio">$10</p>
+                        <button class="producto__boton--deseos" data-precio="10" data-nombre="Sacapuntas">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="10" data-nombre="Sacapuntas">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Borrador.jpg" alt="Borrador" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Borrador</p>
-                    <p class="producto__precio">$5</p>
-                    <button class="producto__boton--deseos" data-precio="5" data-nombre="Borrador">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="5" data-nombre="Borrador">Añadir al carrito</button>
+                <div class="producto" data-categoria="Escolares">
+                    <img class="producto__imagen" src="img/Borrador.jpg" alt="Borrador" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Borrador</p>
+                        <p class="producto__precio">$5</p>
+                        <button class="producto__boton--deseos" data-precio="5" data-nombre="Borrador">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="5" data-nombre="Borrador">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Lapiz.jpg" alt="Lapiz" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Lapiz</p>
-                    <p class="producto__precio">$8</p>
-                    <button class="producto__boton--deseos" data-precio="8" data-nombre="Lapiz">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="8" data-nombre="Lapiz">Añadir al carrito</button>
+                <div class="producto" data-categoria="Escolares">
+                    <img class="producto__imagen" src="img/Lapiz.jpg" alt="Lapiz" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Lapiz</p>
+                        <p class="producto__precio">$8</p>
+                        <button class="producto__boton--deseos" data-precio="8" data-nombre="Lapiz">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="8" data-nombre="Lapiz">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/LColores.jpg" alt="Color" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Color</p>
-                    <p class="producto__precio">$15</p>
-                    <button class="producto__boton--deseos" data-precio="15" data-nombre="Color">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="15" data-nombre="Color">Añadir al carrito</button>
+                <div class="producto" data-categoria="Colores">
+                    <img class="producto__imagen" src="img/LColores.jpg" alt="Color" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Color</p>
+                        <p class="producto__precio">$15</p>
+                        <button class="producto__boton--deseos" data-precio="15" data-nombre="Color">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="15" data-nombre="Color">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Copias.jpg" alt="Copias" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Copias</p>
-                    <p class="producto__precio">Varia El precio de impresion 5$-25$</p>
-                    <button class="producto__boton--deseos" data-precio="5" data-nombre="Copias">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="5" data-nombre="Copias">Añadir al carrito</button>
+                <div class="producto" data-categoria="Papeleria">
+                    <img class="producto__imagen" src="img/Copias.jpg" alt="Copias" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Copias</p>
+                        <p class="producto__precio">Varia El precio de impresion 5$-25$</p>
+                        <button class="producto__boton--deseos" data-precio="5" data-nombre="Copias">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="5" data-nombre="Copias">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Usb.jpeg" alt="Memoria USB" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Memoria USB</p>
-                    <p class="producto__precio">$50</p>
-                    <button class="producto__boton--deseos" data-precio="50" data-nombre="Memoria USB">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="50" data-nombre="Memoria USB">Añadir al carrito</button>
+                <div class="producto" data-categoria="USB">
+                    <img class="producto__imagen" src="img/Usb.jpeg" alt="Memoria USB" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Memoria USB</p>
+                        <p class="producto__precio">$50</p>
+                        <button class="producto__boton--deseos" data-precio="50" data-nombre="Memoria USB">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="50" data-nombre="Memoria USB">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Plastilina.jpeg" alt="Plastilina" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Plastilina</p>
-                    <p class="producto__precio">$25</p>
-                    <button class="producto__boton--deseos" data-precio="25" data-nombre="Plastilina">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="25" data-nombre="Plastilina">Añadir al carrito</button>
+                <div class="producto" data-categoria="Plastilina">
+                    <img class="producto__imagen" src="img/Plastilina.jpeg" alt="Plastilina" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Plastilina</p>
+                        <p class="producto__precio">$25</p>
+                        <button class="producto__boton--deseos" data-precio="25" data-nombre="Plastilina">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="25" data-nombre="Plastilina">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-            <div class="producto">
-                <img class="producto__imagen" src="img/Plumas.jpg" alt="Boligrafo" width="200" height="150" loading="lazy">
-                <div class="producto__informacion">
-                    <p class="producto__nombre">Boligrafo</p>
-                    <p class="producto__precio">$17</p>
-                    <button class="producto__boton--deseos" data-precio="17" data-nombre="Boligrafo">
-                        <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
-                    </button>
-                    <br>
-                    <button class="producto__boton" data-precio="17" data-nombre="Boligrafo">Añadir al carrito</button>
+                <div class="producto" data-categoria="Boligrafo">
+                    <img class="producto__imagen" src="img/Plumas.jpg" alt="Boligrafo" width="200" height="150" loading="lazy">
+                    <div class="producto__informacion">
+                        <p class="producto__nombre">Boligrafo</p>
+                        <p class="producto__precio">$17</p>
+                        <button class="producto__boton--deseos" data-precio="17" data-nombre="Boligrafo">
+                            <img src="img/add_to_wishlist.png" alt="Añadir a deseos" class="icono-deseo">Añadir a lista de deseos
+                        </button>
+                        <br>
+                        <button class="producto__boton" data-precio="17" data-nombre="Boligrafo">Añadir al carrito</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Overlay del carrito -->
-    <div class="carrito-overlay" id="carrito-overlay"></div>
-
-    <!-- Panel del carrito -->
-    <div class="carrito-panel" id="carrito-panel">
-        <div class="carrito-header">
-            <h2>Tu Carrito</h2>
-            <button class="cerrar-carrito" id="cerrar-carrito">&times;</button>
-        </div>
-        
-        <div class="carrito-items" id="carrito-items">
-            <!-- Los productos del carrito aparecerán aquí -->
-            <div class="carrito-vacio">Tu carrito está vacío</div>
+              </div>
+            </main>   
+               <!-- Botones de filtro de categira de los productos -->
+               <aside class="filtros-categorias">
+                <h3>Categorías</h3>
+                <label><input type="checkbox" value="Libreta" class="checkbox-filtro"> Libretas</label>
+                <label><input type="checkbox" value="Escolares" class="checkbox-filtro"> Escolares</label>
+                <label><input type="checkbox" value="Colores" class="checkbox-filtro"> Colores</label>
+                <label><input type="checkbox" value="Papeleria" class="checkbox-filtro"> Papelería</label>
+                <label><input type="checkbox" value="USB" class="checkbox-filtro"> USB</label>
+                <label><input type="checkbox" value="Plastilina" class="checkbox-filtro"> Plastilina</label>
+                <label><input type="checkbox" value="Boligrafo" class="checkbox-filtro"> Bolígrafo</label>
+            </aside> 
         </div>
         
-        <div class="carrito-total">
-            <div class="subtotal">
-                <span>Subtotal:</span>
-                <span id="carrito-subtotal">$0.00</span>
+        <!-- Overlay del carrito -->
+        <div class="carrito-overlay" id="carrito-overlay"></div>
+
+        <!-- Panel del carrito -->
+        <div class="carrito-panel" id="carrito-panel">
+            <div class="carrito-header">
+                <h2>Tu Carrito</h2>
+                <button class="cerrar-carrito" id="cerrar-carrito">&times;</button>
             </div>
             
-            <div class="descuento-container">
-                <input type="text" id="cupon-input" placeholder="Código de descuento (10 caracteres)" maxlength="10">
-                <button id="aplicar-cupon">Aplicar</button>
+            <div class="carrito-items" id="carrito-items">
+                <!-- Los productos del carrito aparecerán aquí -->
+                <div class="carrito-vacio">Tu carrito está vacío</div>
             </div>
             
-            <div class="descuento-aplicado" id="descuento-aplicado" style="display: none;">
-                <span>Descuento:</span>
-                <span id="descuento-monto">-$0.00</span>
+            <div class="carrito-total">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span id="carrito-subtotal">$0.00</span>
+                </div>
+                
+                <div class="descuento-container">
+                    <input type="text" id="cupon-input" placeholder="Código de descuento (10 caracteres)" maxlength="10">
+                    <button id="aplicar-cupon">Aplicar</button>
+                </div>
+                
+                <div class="descuento-aplicado" id="descuento-aplicado" style="display: none;">
+                    <span>Descuento:</span>
+                    <span id="descuento-monto">-$0.00</span>
+                </div>
+                
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="carrito-total">$0.00</span>
+                </div>
+                
+                <div class="pago-container">
+                    <input type="number" id="monto-pagado" placeholder="Monto recibido">
+                    <button id="calcular-cambio">Calcular</button>
+                </div>
+                
+                <div class="cambio-info" id="cambio-info" style="display: none;">
+                    <span>Cambio:</span>
+                    <span id="monto-cambio">$0.00</span>
+                </div>
+                
+                <button class="vaciar-carrito" id="vaciar-carrito">Vaciar Carrito</button>
+                <button class="pagar-carrito" id="pagar-carrito">Procesar Pago</button>
             </div>
-            
-            <div class="total">
-                <span>Total:</span>
-                <span id="carrito-total">$0.00</span>
-            </div>
-            
-            <div class="pago-container">
-                <input type="number" id="monto-pagado" placeholder="Monto recibido">
-                <button id="calcular-cambio">Calcular</button>
-            </div>
-            
-            <div class="cambio-info" id="cambio-info" style="display: none;">
-                <span>Cambio:</span>
-                <span id="monto-cambio">$0.00</span>
-            </div>
-            
-            <button class="vaciar-carrito" id="vaciar-carrito">Vaciar Carrito</button>
-            <button class="pagar-carrito" id="pagar-carrito">Procesar Pago</button>
         </div>
-    </div>
+        <footer class="footer">
+            <p class="footer__texto">Front End Store - Todos los derechos Reservados <span id="current-year"></span>.</p>
+        </footer>
+        <script src="Home.js"></script>
+    </body>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const botonesDeseo = document.querySelectorAll('.producto__boton--deseos');
+    const contadorDeseos = document.getElementById('contador-deseos');
+    const listaDeseos = document.getElementById('lista-deseos');
+    const deseosItems = document.getElementById('deseos-items');
+    const btnVaciar = document.getElementById('vaciar-deseos');
+    const btnToggleLista = document.getElementById('btn-deseos');
 
-    <footer class="footer">
-        <p class="footer__texto">Front End Store - Todos los derechos Reservados <span id="current-year"></span>.</p>
-    </footer>
+    let deseos = [];
 
-    <script src="Home.js"></script>
-</body>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const botonesDeseo = document.querySelectorAll('.producto__boton--deseos');
-  const contadorDeseos = document.getElementById('contador-deseos');
-  const listaDeseos = document.getElementById('lista-deseos');
-  const deseosItems = document.getElementById('deseos-items');
-  const btnVaciar = document.getElementById('vaciar-deseos');
-  const btnToggleLista = document.getElementById('btn-deseos');
+    function actualizarContador() {
+        contadorDeseos.textContent = deseos.length;
+    }
 
-  let deseos = [];
+    function renderizarLista() {
+        deseosItems.innerHTML = '';
+        deseos.forEach((producto, index) => {
+        const li = document.createElement('li');
+        li.classList.add('lista-deseos__item');
+        li.innerHTML = `
+            <span>${producto.nombre} - $${producto.precio}</span>
+            <button class="producto__boton--deseos btn-eliminar" data-index="${index}">Eliminar</button>
+        `;
+        deseosItems.appendChild(li);
+        });
+        actualizarContador();
+    }
 
-  function actualizarContador() {
-    contadorDeseos.textContent = deseos.length;
-  }
+    botonesDeseo.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+        e.preventDefault(); // previene errores si el botón está en un form
 
-  function renderizarLista() {
-    deseosItems.innerHTML = '';
-    deseos.forEach((producto, index) => {
-      const li = document.createElement('li');
-      li.classList.add('lista-deseos__item');
-      li.innerHTML = `
-        <span>${producto.nombre} - $${producto.precio}</span>
-        <button class="producto__boton--deseos btn-eliminar" data-index="${index}">Eliminar</button>
-      `;
-      deseosItems.appendChild(li);
+        const nombre = boton.dataset.nombre;
+        const precio = boton.dataset.precio;
+
+        if (!deseos.some(p => p.nombre === nombre)) {
+            deseos.push({ nombre, precio });
+            renderizarLista();
+        } else {
+            alert('Este producto ya está en tu lista de deseos.');
+        }
+        });
     });
-    actualizarContador();
-  }
 
-  botonesDeseo.forEach(boton => {
-    boton.addEventListener('click', (e) => {
-      e.preventDefault(); // previene errores si el botón está en un form
+    btnToggleLista.addEventListener('click', () => {
+    listaDeseos.classList.toggle('activa');
+    });
 
-      const nombre = boton.dataset.nombre;
-      const precio = boton.dataset.precio;
 
-      if (!deseos.some(p => p.nombre === nombre)) {
-        deseos.push({ nombre, precio });
+    deseosItems.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-eliminar')) {
+        const index = e.target.dataset.index;
+        deseos.splice(index, 1);
         renderizarLista();
-      } else {
-        alert('Este producto ya está en tu lista de deseos.');
-      }
+        }
     });
-  });
 
-  btnToggleLista.addEventListener('click', () => {
-  listaDeseos.classList.toggle('activa');
-});
+    btnVaciar.addEventListener('click', () => {
+        if (confirm('¿Seguro que quieres vaciar tu lista de deseos?')) {
+        deseos = [];
+        renderizarLista();
+        }
+    });
+    });
+    </script>
 
-
-  deseosItems.addEventListener('click', (e) => {
-    if (e.target.classList.contains('btn-eliminar')) {
-      const index = e.target.dataset.index;
-      deseos.splice(index, 1);
-      renderizarLista();
-    }
-  });
-
-  btnVaciar.addEventListener('click', () => {
-    if (confirm('¿Seguro que quieres vaciar tu lista de deseos?')) {
-      deseos = [];
-      renderizarLista();
-    }
-  });
-});
-</script>
-
-</html>
+    </html>
